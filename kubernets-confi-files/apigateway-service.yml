@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apigateway-service-app
+  labels:
+    app: apigateway-service-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: apigateway-service-app
+  template:
+    metadata:
+      labels:
+        app: apigateway-service-app
+    spec:
+      containers:
+      - name: apigateway-service-app
+        image: faizan4053/api-gateway-service:0.0.1
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 9191
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name:  apigateway-service-svc
+spec:
+  selector:
+    app:  apigateway-service-app
+  type:  LoadBalancer
+  ports:
+  - port:  80
+    targetPort:  9191
