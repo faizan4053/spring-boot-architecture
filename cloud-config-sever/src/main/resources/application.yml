@@ -4,9 +4,11 @@ server:
 spring:
   application:
     name: CONFIG-SERVER
-  cloud:
-    config:
-      server:
-        git:
-          uri: https://github.com/faizan4053/config-server
-          clone-on-start: true
+#  cloud:
+#    config:
+#      server:
+#        git:
+#          uri: https://github.com/faizan4053/config-server
+#          username: faizan4053
+#          password:
+#          clone-on-start: true
