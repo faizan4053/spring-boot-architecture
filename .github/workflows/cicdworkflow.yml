@@ -72,7 +72,7 @@ jobs:
       env:
         PROJECT_ID: ${{ env.PROJECT_ID }}
         APPLICATION_CREDENTIALS: ${{ secrets.GKE_KEY }}
-        CLUSTER_NAME: ${{ GKE_CLUSTER }}
+        CLUSTER_NAME: ${{ env.GKE_CLUSTER }}
         ZONE_NAME: ${{ env.GKE_ZONE }}
       with:
         args: apply -f kubernets-confi-files/
