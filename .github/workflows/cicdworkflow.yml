@@ -75,6 +75,6 @@ jobs:
         CLUSTER_NAME: ${{ env.GKE_CLUSTER }}
         ZONE_NAME: ${{ env.GKE_ZONE }}
       with:
-        args: apply -f kubernets-confi-files/
+        args: kubectl apply -f kubernets-confi-files/
 
     
